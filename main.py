@@ -43,15 +43,28 @@ def respuestas_user():
             respuestas.append(1)
         else:
             respuestas.append(0)
-    return respuestas
+    return respuestas, fav_genre
 
-def analiticas(ans):
+def analiticas(ans, fav_genre):
     datocurioso = (ans[0]*24)/100
-    show = f"Pasas {datocurioso}% de tu dia escuchando musica"
+    show = f"Pasas {datocurioso}% de tu dia escuchando musica "
     for letra in show:
         print(letra, end='')
 
+    if fav_genre > 0 and fav_genre <=16:
+        recomendaciones = {"Clasica":[], "Country":[], "EDM":[], "Folk":[], "Gospel":[], "HipHop":[], "Jazz":[], "KPop":[], 
+                                "Latina":[], "Lofi":[], "Metal":[], "Pop":[], "R&B":[], "Rap":[], "Rock":["Muse"], "Videojuegos":[]}
+        generofav = list(recomendaciones.keys())[fav_genre-1]
+        recomendados = recomendaciones[generofav][0]
 
-res_user = respuestas_user()
+        print(f"Tu genero favorito es {generofav}!")
+        print(f"A continuacion te muestro recomendaciones que la comunidad ha dejado sobre este genero:\n{recomendados}")
+        propuesta = input("\nAhora porfavor deja alguna recomendacion de cancion, artista o album de este genero para la comunidad!: ")
+        recomendaciones[generofav].append(propuesta)
+    else:
+        print("\nTu genero favorito no es soportado :(")
 
-print(analiticas(res_user))
+
+lista, fav_genre = respuestas_user()
+
+analiticas(lista, fav_genre)
