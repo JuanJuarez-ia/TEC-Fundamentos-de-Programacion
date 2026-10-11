@@ -47,7 +47,7 @@ def respuestas_user():
 
 def analiticas(ans, fav_genre):
     datocurioso = (ans[0]*24)/100
-    show = f"Pasas {datocurioso}% de tu dia escuchando musica "
+    show = f"\nPasas {datocurioso}% de tu dia escuchando musica "
     for letra in show:
         print(letra, end='')
 
@@ -57,7 +57,7 @@ def analiticas(ans, fav_genre):
         generofav = list(recomendaciones.keys())[fav_genre-1]
         recomendados = recomendaciones[generofav][0]
 
-        print(f"Tu genero favorito es {generofav}!")
+        print(f"\nTu genero favorito es {generofav}!")
         print(f"A continuacion te muestro recomendaciones que la comunidad ha dejado sobre este genero:\n{recomendados}")
         propuesta = input("\nAhora porfavor deja alguna recomendacion de cancion, artista o album de este genero para la comunidad!: ")
         recomendaciones[generofav].append(propuesta)
@@ -65,6 +65,18 @@ def analiticas(ans, fav_genre):
         print("\nTu genero favorito no es soportado :(")
 
 
-lista, fav_genre = respuestas_user()
+acabar = False
 
-analiticas(lista, fav_genre)
+while acabar == False:
+    lista, fav_genre = respuestas_user()
+
+    print("\nProcesando tus respuestas...")
+    for i in range(3, 0, -1):
+        print(f"Cargando analíticas en {i}...")
+        time.sleep(1)
+
+    analiticas(lista, fav_genre)
+
+    continuar = input("Desea continuar? y/n: ")
+    if continuar == "n" or continuar == "N" or continuar == "no":
+        acabar = True
