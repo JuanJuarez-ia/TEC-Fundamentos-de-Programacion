@@ -30,20 +30,22 @@ Este proyecto implementa un modelo de **Regresión Lineal Simple** alimentado po
    python main.py
    
 ## Estructura del Proyecto
-├── main.py              # Script principal y lógica de interacción
-├── database.csv         # Dataset de entrenamiento (hábitos vs. edad)
-├── README.md            # Documentación del proyecto
-└── requirements.txt     # Dependencias del entorno
-
-### Pseudocódigo
+```
+── main.py              # Script principal y lógica de interacción
+── database.csv         # Dataset de entrenamiento (hábitos vs. edad)
+── README.md            # Documentación del proyecto
+── requirements.txt     # Dependencias del entorno
+```
+## Pseudocodigo
+```
 INICIO DEL PROGRAMA
 
-  // Fase 1: Inicialización y Modelado
+  // Inicializacion y Modelado
   Importar librerías (pandas, time, sklearn)
   Cargar "database.csv" en DataFrame
   Entrenar Modelo_Regresion_Lineal usando DataFrame (X = hábitos, y = edad)
 
-  // Fase 2: Definición de Funciones
+  // Definicion de Funciones
   FUNCION respuestas_user():
       Crear lista vacía 'respuestas'
       
@@ -71,7 +73,7 @@ INICIO DEL PROGRAMA
 
   FUNCION analiticas(ans, fav_genre, modelo):
       Calcular porcentaje_dia = (ans[0] * 24) / 100
-      Imprimir "Pasas " + porcentaje_dia + "% del día escuchando música"
+      Imprimir "Pasas " + porcentaje_dia + "% del día escuchando musica"
       
       SI fav_genre está entre 1 y 16:
           Obtener nombre_genero basado en fav_genre
@@ -81,12 +83,12 @@ INICIO DEL PROGRAMA
       SINO:
           Imprimir "Género no soportado"
 
-      // Integración de predicción
+      // Integracion de prediccion
       edad_predicha = modelo.predecir(ans)
       Imprimir "El modelo predice que tu edad es: " + edad_predicha
   FIN FUNCION
 
-  // Fase 3: Bucle Principal de Ejecución
+  // Fase 3: Bucle Principal de Ejecucion
   acabar = Falso
   MIENTRAS acabar == Falso HACER:
       lista_respuestas, genero_favorito = llamar respuestas_user()
@@ -103,10 +105,4 @@ INICIO DEL PROGRAMA
           acabar = Verdadero
           
 FIN DEL PROGRAMA
-
-## Autor
-Jesús Juan De Jesús Juárez
-Ingeniería en Inteligencia Artificial y Ciencia de Datos
-Tecnológico de Monterrey, Campus Querétaro
-Proyecto final de programación.
-
+```
