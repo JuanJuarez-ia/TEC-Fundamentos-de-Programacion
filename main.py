@@ -13,22 +13,14 @@ def respuestas_user():
 
     print("\nEn las siguientes preguntas podras responder del 1 al 4 siendo 1 'NUNCA' y 4 'Siempre'")
 
-    respuestas.append(int(input("Que tan frecuente escuchas musica clasica?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica country?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica EDM?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica folk?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica gospel?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica hip hop?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica jazz?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica K pop?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica latina?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica lofi?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica metal?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica pop?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica R&B?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica rap?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica rock?: ")))
-    respuestas.append(int(input("Que tan frecuente escuchas musica de videojuegos?: ")))
+    generos_musicales = [
+        "clasica", "country", "EDM", "folk", "gospel", "hip hop", 
+        "jazz", "K pop", "latina", "lofi", "metal", "pop", 
+        "R&B", "rap", "rock", "de videojuegos"
+     ]
+
+    for genero in generos_musicales:
+        respuestas.append(int(input(f"Que tan frecuente escuchas musica de {genero}: ")))
 
     print("\nDe la siguiente lista, escribe el NUMERO de tu genero favorito:")
     print("1. Clasica   2. Country   3. EDM       4. Folk")
