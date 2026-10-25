@@ -43,6 +43,26 @@ def analiticas(ans, fav_genre):
     for letra in show:
         print(letra, end='')
 
+    matriz_perfiles = [
+        [ans[6], ans[14], ans[18], ans[15]],
+        [ans[9], ans[17], ans[16], ans[12]],
+        [ans[4], ans[13], ans[10], ans[19]], 
+        [ans[5], ans[7], ans[8], ans[11]]    
+    ]
+    
+    nombres_perfiles = ["Energetico y Explosivo", "Urbano y Ritmico", "Relajado y de Enfoque", "Tradicional o Variado"]
+    puntajes = []
+    
+    for fila in matriz_perfiles:
+        suma_fila = sum(fila)
+        puntajes.append(suma_fila)
+        
+    indice_ganador = puntajes.index(max(puntajes))
+    perfil_ganador = nombres_perfiles[indice_ganador]
+    
+    print(f"\n\n  Analizando tu Personalidad Musical ---")
+    print(f"Calculando las intersecciones de tus gustos, tu perfil predominante es: {perfil_ganador}!")
+
     if fav_genre > 0 and fav_genre <=16:
         recomendaciones = {"Clasica":[], "Country":[], "EDM":[], "Folk":[], "Gospel":[], "HipHop":[], "Jazz":[], "KPop":[], 
                                 "Latina":[], "Lofi":[], "Metal":[], "Pop":[], "R&B":[], "Rap":[], "Rock":["Muse"], "Videojuegos":[]}
